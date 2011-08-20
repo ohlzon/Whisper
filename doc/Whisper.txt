@@ -1,0 +1,6 @@
+Models
+	RemoteSwitch
+		Label
+		Location
+		Type
+		
