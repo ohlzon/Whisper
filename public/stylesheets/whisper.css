@@ -1,2 +1,27 @@
 div {
   margin: 10px 0px; }
+
+#whisper {
+  width: 500px;
+  margin: auto; }
+  #whisper ul {
+    list-style-type: none; }
+    #whisper ul li {
+      margin: 24px 0; }
+  #whisper form label {
+    margin-top: 12px;
+    margin-right: 12px; }
+  #whisper #navigation {
+    padding: 6px 24px;
+    background: #e5e5e5;
+    border: 1px solid #9f9f9f;
+    border-radius: 18px;
+    background: -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bcbcbc));
+    background: -webkit-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+    background: -o-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+    background: -ms-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 );
+    background: linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%); }
+  #whisper #notice {
+    height: 24px; }

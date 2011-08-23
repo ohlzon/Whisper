@@ -1,10 +1,11 @@
 List of Remote Switches known to Whisper: <br />
-<% @remote_switches.each do |f| %>
-  <br />
-  <br />
-  <%= link_to f.label, remote_switch_path(f) %>
-  <%= f.location %><br />
-  <%= f.kind %><br />
-<% end %>
-<br />
-<%= link_to 'Create new switch', new_remote_switch_path %>
+<ul>
+  <% @remote_switches.each do |f| %>
+    <li>
+      <strong><%= link_to f.label, remote_switch_path(f) %></strong><br />
+      <%= f.location %><br />
+      <%= link_to 'Turn on', on_remote_switch_path(f) %>
+      <%= link_to 'Turn off', off_remote_switch_path(f) %>
+    </li>
+  <% end %>
+</ul>

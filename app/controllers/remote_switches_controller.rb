@@ -17,16 +17,19 @@ class RemoteSwitchesController < ApplicationController
       redirect_to(@remote_switch, :notice => 'Remote switch saved')
     end
   end
-  
+
   def on
+    RemoteSwitch.new(params[:id]).on!
     time = Time.now
-    flash[:notice] = "Switched on at " + time.strftime("%H:%M:%S")
-    redirect_to :action => "show"
+    flash[:notice] = "Switched " + RemoteSwitch.find(params[:id]).label + " on at " + time.strftime("%H:%M:%S")
+    redirect_to :back
   end
   
   def off
+    RemoteSwitch.new(params[:id]).off!
     time = Time.now
-    flash[:notice] = "Switched off at " + time.strftime("%H:%M:%S")
-    redirect_to :action => "show"
+    flash[:notice] = "Switched " + RemoteSwitch.find(params[:id]).label + " off at " + time.strftime("%H:%M:%S")
+    redirect_to :back
   end
+
 end
