@@ -18,5 +18,17 @@ Settings pane
 tellstick.conf
 	Export of DB data
 	Overwritten every time an export is make
-	
+	Model needs following fields
+		# Name of Nexa device
+		deviceNode = "/dev/tellstick" 
+
+		# Per-device settings
+		  id = 1
+		  name = "Example device"
+		  protocol = "arctech"
+		  model = "selflearning-switch"
+		  parameters {
+		    house = "A"
+		    unit = "1"
+		  }
 	

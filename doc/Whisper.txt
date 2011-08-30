@@ -1,6 +1,13 @@
 Models
 	RemoteSwitch
-		Label
-		Location
-		Type
-		
+		Label (becomes Device/name)
+		Location (becomes Device/location)
+		Type (becomes Device/model)
+	Device
+		name
+    protocol
+    model
+    house
+    unit
+    location
+	
