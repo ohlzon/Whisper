@@ -1,0 +1,22 @@
+Interface for on/off
+	Lists switches
+		Individual on/off buttons
+		Name and/or location
+		Current state
+		Extra features pane
+			Timer settings
+	Group off/on
+
+Settings pane
+	Add switches
+		Form for label, location, type
+	Setup switches
+		Learn-button
+		Delete switches
+		
+		
+tellstick.conf
+	Export of DB data
+	Overwritten every time an export is make
+	
+	
