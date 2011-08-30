@@ -1,5 +1,5 @@
 class Device < ActiveRecord::Base
-  def writeconfig
     p '################ WRITE FILE ################'
+  def self.writeconfig
   end
 end

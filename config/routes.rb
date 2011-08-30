@@ -4,7 +4,7 @@ Whisper::Application.routes.draw do
     get :off, :on => :member
   end
   resources :devices do
-    get :writeconfig, :on => :member
+    get :writeconfig, :on => :collection
   end
   root :to => 'remote_switches#index'
 end
