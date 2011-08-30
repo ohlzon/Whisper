@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110820222734) do
+ActiveRecord::Schema.define(:version => 20110830205410) do
+
+  create_table "devices", :force => true do |t|
+    t.string   "name"
+    t.string   "protocol"
+    t.string   "model"
+    t.integer  "house"
+    t.integer  "unit"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "remote_switches", :force => true do |t|
     t.string   "label"

@@ -1,0 +1,10 @@
+Name: <%= @device.name %> (ID <%= @device.id %>)<br />
+Location: <%= @device.location %> <br />
+Type: <%= @device.model %> <br />
+Protocol: <%= @device.protocol %><br />
+
+House number: <%= @device.house %><br />
+Unit number: <%= @device.unit %><br />
+
+<%= link_to 'Delete', device_path, :method => :delete %>
+<%= link_to 'writeconfig', device_writeconfig_path %><br />

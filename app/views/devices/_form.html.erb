@@ -1,0 +1,29 @@
+<%= form_for([@device]) do |f| %>
+<div class="field">
+  <%= f.label "Name" %><br />
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label "Location" %><br />
+  <%= f.text_field :location %>
+</div>
+<div class="field">
+  <%= f.label "Type" %><br />
+  <%= f.text_field :model %>
+</div>
+<div class="field">
+  <%= f.label "Protocol" %><br />
+  <%= f.text_field :protocol %>
+</div>
+<div class="field">
+  <%= f.label "House" %><br />
+  <%= f.text_field :house %>
+</div>
+<div class="field">
+  <%= f.label "Unit number" %><br />
+  <%= f.text_field :unit %>
+</div>
+<div class="field">
+  <%= f.submit %>
+</div>
+<% end %>

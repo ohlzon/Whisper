@@ -1,0 +1,9 @@
+List of Devices configured through Whisper: <br />
+<%= link_to 'New Device', new_device_path %>
+<ul>
+  <% @devices.each do |f| %>
+    <li>
+      <strong><%= link_to f.name, device_path(f) %></strong><br />
+    </li>
+  <% end %>
+</ul>
