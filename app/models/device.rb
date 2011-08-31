@@ -27,4 +27,9 @@ class Device < ActiveRecord::Base
     p result
   end
   
+  def learn!
+    result = (`echo Broadcasting learn signal for #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
+    p result
+  end
+  
 end

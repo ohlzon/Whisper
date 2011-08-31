@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  before_filter :find_device, :only => [:show, :on, :off]
+  before_filter :find_device, :only => [:show, :on, :off, :learn]
   private
   def find_device
     @device = Device.find(params[:id])
@@ -47,4 +47,10 @@ class DevicesController < ApplicationController
     Device.writeconfig
     redirect_to(devices_path)
   end
+  
+  def learn
+    @device.learn!
+    redirect_to(devices_path)
+  end
+  
 end
