@@ -1,17 +1,19 @@
 class Device < ActiveRecord::Base
   def self.writeconfig
-    configfile = File.open( "doc/tellstick.conf","w")
+    configfile = File.open( "doc/tellstick.conf","w") # Use this row for development purposes
+    # configfile = File.open( "/etc/tellstick.conf","w") # Use this row for production (remember to chown webuser/tellstick.conf)
     configfile.write 'deviceNode = "/dev/tellstick"' + "\n"
     Device.all.each do |f|
       configfile.write 'device {' + "\n"
-      configfile.write "  id = " + (f.id).to_s + "\n"
-      configfile.write "  name = " + f.name + "\n"
-      configfile.write "  model = " + f.model + "\n"
-      configfile.write "  parameters {" + "\n"
-      configfile.write "    house = " + (f.house).to_s + "\n"
-      configfile.write "    unit = " + (f.unit).to_s + "\n"
-      configfile.write "  }" + "\n"
-      configfile.write "}" + "\n"
+      configfile.write '  id = "' + (f.id).to_s + '"' + "\n"
+      configfile.write '  name = "' + f.name + '"' + "\n"
+      configfile.write '  protocol = "' + f.protocol + '"' + "\n"
+      configfile.write '  model = "' + f.model + '"' + "\n"
+      configfile.write '  parameters {' + "\n"
+      configfile.write '    house = "' + (f.house).to_s + '"' + "\n"
+      configfile.write '    unit = "' + (f.unit).to_s + '"' + "\n"
+      configfile.write '  }' + "\n"
+      configfile.write '}' + "\n"
       configfile.write "\n"
     end
     configfile.close
@@ -26,9 +28,9 @@ class Device < ActiveRecord::Base
   def off!
     result = (`echo Switched off #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
     p result
-    `tdtool -f #{id}`
+    `tdtool -f #{id} 2>&1`
   end
-  
+
   def learn!
     result = (`echo Broadcasting learn signal for #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
     p result
