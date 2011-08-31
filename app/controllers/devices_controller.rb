@@ -6,6 +6,7 @@ class DevicesController < ApplicationController
   end
 
   public
+  
   def index
     @devices = Device.all
   end
@@ -37,10 +38,10 @@ class DevicesController < ApplicationController
   end
   
   def off
-    @device.off!
+    @result = @device.off!
     time = Time.now
     flash[:notice] = "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") }"
-    redirect_to :back, :notice => "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") }"
+    redirect_to :back, :notice => "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") } with result #{@result}"
   end
   
   def writeconfig
