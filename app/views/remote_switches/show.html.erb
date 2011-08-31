@@ -1,7 +1,0 @@
-<h2><%= @remote_switch.label %></h2>
-Location: <%= @remote_switch.location %> <br />
-Type: <%= @remote_switch.kind %> <br />
-
-<br />
-<%= link_to 'Switch ' + @remote_switch.label.to_s + ' on', on_remote_switch_path(@remote_switch) %><br />
-<%= link_to 'Switch ' + @remote_switch.label.to_s + ' off', off_remote_switch_path(@remote_switch) %><br />
