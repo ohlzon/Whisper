@@ -20,16 +20,19 @@ class Device < ActiveRecord::Base
   def on!
     result = (`echo Switched on #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
     p result
+    `tdtool -n #{id}`
   end
 
   def off!
     result = (`echo Switched off #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
     p result
+    `tdtool -f #{id}`
   end
   
   def learn!
     result = (`echo Broadcasting learn signal for #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
     p result
+    `tdtool -e #{id}`
   end
   
 end
