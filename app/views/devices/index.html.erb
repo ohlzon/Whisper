@@ -5,6 +5,8 @@ List of Devices configured through Whisper: <br />
     <li>
       <strong><%= link_to f.name, device_path(f) %></strong><br />
     </li>
+    <%= link_to 'Turn on', on_device_path(f) %>
+    <%= link_to 'Turn off', off_device_path(f) %>
   <% end %>
 </ul>
 <%= link_to 'writeconfig', writeconfig_devices_path %><br />

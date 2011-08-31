@@ -16,4 +16,15 @@ class Device < ActiveRecord::Base
     end
     configfile.close
   end
+  
+  def on!
+    result = (`echo Switched on #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
+    p result
+  end
+
+  def off!
+    result = (`echo Switched off #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
+    p result
+  end
+  
 end
