@@ -1,27 +1,78 @@
-div {
-  margin: 10px 0px; }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside; }
+  ul li {
+    margin: 0;
+    padding: 0; }
 
 #whisper {
   width: 500px;
   margin: auto; }
-  #whisper ul {
-    list-style-type: none; }
-    #whisper ul li {
-      margin: 24px 0; }
+  #whisper ul#navigation {
+    margin: 24px 0; }
+    #whisper ul#navigation li {
+      display: inline;
+      margin-left: -5px; }
+      #whisper ul#navigation li a {
+        padding: 12px 24px;
+        background: #e5e5e5;
+        border: 1px solid #9f9f9f;
+        background: -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bcbcbc));
+        background: -webkit-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+        background: -o-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+        background: -ms-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 );
+        background: linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%); }
+        #whisper ul#navigation li a#first {
+          border-top-left-radius: 18px;
+          border-bottom-left-radius: 18px; }
+        #whisper ul#navigation li a#last {
+          border-top-right-radius: 18px;
+          border-bottom-right-radius: 18px; }
+  #whisper h2 {
+    font-size: 12px; }
+  #whisper ul.devicelist li {
+    margin: 24px 0; }
   #whisper form label {
     margin-top: 12px;
     margin-right: 12px; }
-  #whisper #navigation {
-    padding: 6px 24px;
-    background: #e5e5e5;
-    border: 1px solid #9f9f9f;
-    border-radius: 18px;
-    background: -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bcbcbc));
-    background: -webkit-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-    background: -o-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-    background: -ms-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 );
-    background: linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%); }
   #whisper #notice {
     height: 24px; }
+  #whisper #viewport {
+    width: 120px;
+    height: 50px;
+    overflow: hidden; }
+  #whisper .dial {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 6px;
+    line-height: auto;
+    background-color: white; }
+    #whisper .dial p {
+      font-size: 60px;
+      margin-top: 2px;
+      font-variant: small-caps; }
+    #whisper .dial.on p {
+      text-align: center; }
+    #whisper .dial.on.switched {
+      -webkit-transform: rotate(-20deg);
+      top: -50px;
+      left: -15px; }
+    #whisper .dial.off {
+      top: -21px; }
+      #whisper .dial.off p {
+        text-align: center; }
+      #whisper .dial.off.switched {
+        top: 50px;
+        left: -15px;
+        -webkit-transform: rotate(20deg); }
+  #whisper #frame {
+    width: 120px;
+    height: 50px;
+    margin-top: -50px;
+    position: relative;
+    box-shadow: inset 0px 0px 12px 4px black; }

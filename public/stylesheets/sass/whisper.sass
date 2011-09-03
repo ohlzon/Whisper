@@ -2,37 +2,102 @@ $basemeasure: 6px
 
 body
 
-div
-  :margin 10px 0px
-  
+ul
+  :margin 0
+  :padding 0
+  :list-style-type none
+  :list-style-position inside
+  li
+    :margin 0
+    :padding 0
+
 #whisper
   :width 500px
   :margin auto
   
-  ul
-    :list-style-type none
+  // Navigation settings
+  ul#navigation
+    :margin $basemeasure*4 0
+
+    li
+      :display inline
+      :margin-left -5px
+      
+      a
+        :padding $basemeasure*2 $basemeasure*4
+        :background #e5e5e5 /* Old browsers */
+        :border 1px solid #9f9f9f
+        :background -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%) /* FF3.6+ */
+        :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#bcbcbc)) /* Chrome,Safari4+ */
+        :background -webkit-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Chrome10+,Safari5.1+ */
+        :background -o-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Opera11.10+ */
+        :background -ms-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* IE10+ */
+        :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 ) /* IE6-9 */
+        :background linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* W3C */
+      
+        &#first
+          :border-top-left-radius $basemeasure * 3
+          :border-bottom-left-radius $basemeasure * 3
+        &#last
+          :border-top-right-radius $basemeasure * 3
+          :border-bottom-right-radius $basemeasure * 3
+  
+  // End of Navigation settings
+  
+  // Main content settings
+  h2
+    :font-size $basemeasure*2
+
+  ul.devicelist
     li
       :margin $basemeasure*4 0
-  
+
   form
     label
       :margin-top $basemeasure*2
       :margin-right $basemeasure*2
-  
-  #navigation
-    :padding $basemeasure*1 $basemeasure*4 
-    :background #e5e5e5 /* Old browsers */
-    :border 1px solid #9f9f9f
-    :border-radius $basemeasure * 3
-    :background -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%) /* FF3.6+ */
-    :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#bcbcbc)) /* Chrome,Safari4+ */
-    :background -webkit-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Chrome10+,Safari5.1+ */
-    :background -o-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Opera11.10+ */
-    :background -ms-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* IE10+ */
-    :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 ) /* IE6-9 */
-    :background linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* W3C */
-    
+
   #notice
     :height $basemeasure*4
 
-  
+  // Experimental settings
+  #viewport
+    :width 120px
+    :height 50px
+    :overflow hidden
+  .dial
+    :width 100%
+    :height auto
+    :position relative
+    :top 6px
+    :line-height auto
+    :background-color white
+    p
+      :font-size 60px
+      :margin-top 2px
+      :font-variant small-caps
+    &.on
+      p
+        :text-align center
+      &.switched
+        :-webkit-transform rotate(-20deg)
+        :top -50px
+        :left -15px
+    &.off
+      :top -21px
+      p
+        :text-align center
+      &.switched
+        :top 50px
+        :left -15px
+        :-webkit-transform rotate(20deg)
+  #frame
+    :width 120px
+    :height 50px
+    :margin-top -50px
+    :position relative
+    :box-shadow inset 0px 0px $basemeasure*2 4px black
+
+
+
+
