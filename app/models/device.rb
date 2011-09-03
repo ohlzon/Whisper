@@ -22,13 +22,13 @@ class Device < ActiveRecord::Base
   def on!
     p "Switched on" # Used for development
     #`tdtool -n #{id} 2>&1` # Used for production
-    Device.find(id).update_attributes(:state => true)
+    Device.find(id).update_attributes(:state => "on")
   end
 
   def off!
     p "Switched off" # Used for development
     # `tdtool -f #{id} 2>&1` # Used for production
-    Device.find(id).update_attributes(:state => false)
+    Device.find(id).update_attributes(:state => "off")
   end
 
   def learn!
