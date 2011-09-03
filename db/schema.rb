@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110830205410) do
     t.integer  "house"
     t.integer  "unit"
     t.string   "location"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

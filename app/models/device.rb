@@ -20,15 +20,15 @@ class Device < ActiveRecord::Base
   end
   
   def on!
-    result = (`echo Switched on #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
-    p result
-    `tdtool -n #{id}`
+    p "Switched on" # Used for development
+    #`tdtool -n #{id} 2>&1` # Used for production
+    Device.find(id).update_attributes(:state => true)
   end
 
   def off!
-    result = (`echo Switched off #{name} in terminal at `)[0..-2] + " " + Time.zone.now.strftime("%H:%M:%S")
-    p result
-    `tdtool -f #{id} 2>&1`
+    p "Switched off" # Used for development
+    # `tdtool -f #{id} 2>&1` # Used for production
+    Device.find(id).update_attributes(:state => false)
   end
 
   def learn!

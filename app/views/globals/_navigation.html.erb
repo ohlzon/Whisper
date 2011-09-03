@@ -1,4 +1,5 @@
-<div class="navigation">
-  <%= link_to 'All Devices', devices_path %>
-  <%= link_to 'Create new device', new_device_path %>
-</div>
+<ul id="navigation">
+  <li><%= link_to 'All Devices', devices_path, :id => 'first' %></li>
+  <li><%= link_to 'Settings', devices_path %></li>
+  <li><%= link_to 'Create new device', new_device_path, :id => 'last' %></li>
+</ul>

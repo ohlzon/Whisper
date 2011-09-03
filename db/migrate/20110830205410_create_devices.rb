@@ -7,6 +7,7 @@ class CreateDevices < ActiveRecord::Migration
       t.integer :house
       t.integer :unit
       t.string :location
+      t.boolean :state
 
       t.timestamps
     end

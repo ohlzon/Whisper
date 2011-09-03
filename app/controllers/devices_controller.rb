@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  before_filter :find_device, :only => [:show, :on, :off, :learn]
+  before_filter :find_device, :only => [:show, :update, :on, :off, :learn]
   private
   def find_device
     @device = Device.find(params[:id])
@@ -18,30 +18,35 @@ class DevicesController < ApplicationController
     @device = Device.new
   end
   
+  def update
+    device = @device
+    @device.save
+  end
+  
   def destroy
     @device = Device.destroy(params[:id])
     redirect_to :action => 'index'
   end
 
   def create
-    @device= Device.new(params[:device])
+    @device = Device.new(params[:device])
     if @device.save
       redirect_to(@device, :notice => 'Device saved')
     end
   end
   
   def on
-    @device.on!
+    result = @device.on!
     time = Time.now
-    flash[:notice] = "Switched #{ @device.name } on at #{ Time.zone.now.strftime("%H:%M:%S") }"
-    redirect_to :back, :notice => "Switched #{ @device.name } on at #{ Time.zone.now.strftime("%H:%M:%S") }"
+    #flash[:notice] = "Switched #{ @device.name } on at #{ Time.zone.now.strftime("%H:%M:%S") }"
+    redirect_to :devices, :notice => "Switched #{ @device.name } on at #{ Time.zone.now.strftime("%H:%M:%S") } with result #{result}"
   end
   
   def off
-    @result = @device.off!
+    result = @device.off!
     time = Time.now
-    flash[:notice] = "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") }"
-    redirect_to :back, :notice => "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") } with result #{@result}"
+    #flash[:notice] = "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") }"
+    redirect_to :devices, :notice => "Switched #{ @device.name } off at #{ Time.zone.now.strftime("%H:%M:%S") } with result #{result}"
   end
   
   def writeconfig

@@ -1,13 +1,17 @@
-List of Devices configured through Whisper: <br />
-<%= link_to 'New Device', new_device_path %>
-<ul>
+<h2>List of Devices configured through Whisper</h2> 
+<ul class="devicelist">
   <% @devices.each do |f| %>
     <li>
       <strong><%= link_to f.name, device_path(f) %></strong><br />
+      <%= link_to 'Turn on', on_device_path(f) %><br />
+      <%= link_to 'Turn off', off_device_path(f) %><br />
+      <%= link_to 'Learn', learn_device_path(f) %>
+      <p>Last set state: <%= f.state %></p>
     </li>
-    <%= link_to 'Turn on', on_device_path(f) %><br />
-    <%= link_to 'Turn off', off_device_path(f) %><br />
-    <%= link_to 'Learn', learn_device_path(f) %>
   <% end %>
-</ul>
+</ul><br />
 <%= link_to 'writeconfig', writeconfig_devices_path %><br />
+
+<h2>Experimental stuff</h2>
+<div id="viewport"><div class="dial on switched"><p>on</p></div><div class="dial off"><p>off</p></div></div>
+<div id="frame"></div>
