@@ -1,2 +1,11 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+document.observe( 'click', function( event )
+{
+  event.preventDefault();
+  var elem = event.element();
+  if ( elem.match( '.switch' ) )
+  {
+    $.ajax({
+      url: '/whisper/off/' + $(this).attr('id'),
+    });
+  }
+});
