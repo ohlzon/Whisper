@@ -6,12 +6,7 @@
       <%= link_to 'Turn on', on_device_path(f), :class => "switch on", :id => f.id %><br />
       <%= link_to 'Turn off', off_device_path(f), :class => "switch off", :id => f.id %><br />
     </li>
-    <div class="viewport">
-      <!-- <div class="dial on <% if f.state == "off" %>switched<% end %>"><p>on</p></div> -->
-      <!-- <div class="dial off <% if f.state == "on" %>switched<% end %>"><p>off</p></div> -->
-      <p class="<%= f.id %>state">on</p>
-    </div>
-    <div class="frame"></div>
+    <p class="<%= f.id %>state">on</p>
   <% end %>
 </ul><br />
 <%= link_to 'writeconfig', writeconfig_devices_path %><br />
