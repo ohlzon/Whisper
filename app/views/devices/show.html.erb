@@ -6,4 +6,5 @@ Protocol: <%= @device.protocol %><br />
 House number: <%= @device.house %><br />
 Unit number: <%= @device.unit %><br />
 
+<%= link_to 'Learn', learn_device_path, :class => "learn" %>
 <%= link_to 'Delete', device_path, :method => :delete %>

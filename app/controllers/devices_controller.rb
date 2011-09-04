@@ -34,7 +34,7 @@ class DevicesController < ApplicationController
       redirect_to(@device, :notice => 'Device saved')
     end
   end
-  
+
   def on
     result = @device.on!
     time = Time.now

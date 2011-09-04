@@ -9,11 +9,11 @@
 </div>
 <div class="field">
   <%= f.label "Type" %><br />
-  <%= f.text_field :model %>
+  <%= f.select("model", Devicetype::DEVICE_TYPES )%>
 </div>
 <div class="field">
   <%= f.label "Protocol" %><br />
-  <%= f.text_field :protocol %>
+  <%= f.select("protocol", Protocol::PROTOCOLS ) %>
 </div>
 <div class="field">
   <%= f.label "House" %><br />
