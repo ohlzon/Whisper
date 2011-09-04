@@ -41,38 +41,3 @@ ul {
     margin-right: 12px; }
   #whisper #notice {
     height: 24px; }
-  #whisper .viewport {
-    width: 120px;
-    height: 50px;
-    overflow: hidden; }
-  #whisper .dial {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 6px;
-    line-height: auto;
-    background-color: white; }
-    #whisper .dial p {
-      font-size: 60px;
-      margin-top: 2px;
-      font-variant: small-caps; }
-    #whisper .dial.on p {
-      text-align: center; }
-    #whisper .dial.on.switched {
-      -webkit-transform: rotate(-20deg);
-      top: -50px;
-      left: -15px; }
-    #whisper .dial.off {
-      top: -21px; }
-      #whisper .dial.off p {
-        text-align: center; }
-      #whisper .dial.off.switched {
-        top: 50px;
-        left: -15px;
-        -webkit-transform: rotate(20deg); }
-  #whisper .frame {
-    width: 120px;
-    height: 50px;
-    margin-top: -50px;
-    position: relative;
-    box-shadow: inset 0px 0px 12px 4px black; }
