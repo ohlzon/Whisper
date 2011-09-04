@@ -15,6 +15,27 @@ ul
 .clear
   :clear both
 
+.gradient
+  :background #e5e5e5 /* Old browsers */
+  :background -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%) /* FF3.6+ */
+  :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#bcbcbc)) /* Chrome,Safari4+ */
+  :background -webkit-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Chrome10+,Safari5.1+ */
+  :background -o-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Opera11.10+ */
+  :background -ms-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* IE10+ */
+  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 ) /* IE6-9 */
+  :background linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* W3C */
+
+.reverse_gradient
+  :background #e5e5e5 /* Old browsers */
+  :background -moz-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%) /* FF3.6+ */
+  :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(100%,#e5e5e5)) /* Chrome,Safari4+ */
+  :background -webkit-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* Chrome10+,Safari5.1+ */
+  :background -o-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* Opera11.10+ */
+  :background -ms-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* IE10+ */
+  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#e5e5e5',GradientType=0 ) /* IE6-9 */
+  :background linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* W3C */
+
+
 #whisper
   :width 500px
   :margin auto
@@ -29,16 +50,8 @@ ul
       
       a
         :padding $basemeasure*2 $basemeasure*4
-        :background #e5e5e5 /* Old browsers */
         :border 1px solid #9f9f9f
-        :background -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%) /* FF3.6+ */
-        :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#bcbcbc)) /* Chrome,Safari4+ */
-        :background -webkit-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Chrome10+,Safari5.1+ */
-        :background -o-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Opera11.10+ */
-        :background -ms-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* IE10+ */
-        :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 ) /* IE6-9 */
-        :background linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* W3C */
-      
+        @extend .gradient      
         &#first
           :border-top-left-radius $basemeasure * 3
           :border-bottom-left-radius $basemeasure * 3
@@ -59,6 +72,7 @@ ul
       .deviceheader
         :padding $basemeasure*2
         :background-color $basegray
+        @extend .gradient
         :border 1px solid #9f9f9f
         :border-bottom none
         :border-top-left-radius $basemeasure * 3
@@ -73,6 +87,7 @@ ul
         :width 249px
         :float left
         :background-color $basegray
+        @extend .reverse_gradient
         :border 1px solid #9f9f9f
         :border-top none
         :text-align center
