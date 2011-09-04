@@ -1,5 +1,10 @@
 $basemeasure: 6px
 $basegray: #cccccc
+$bordercolor: #9f9f9f
+$darkgray: #9a9a9a
+$midgray: #bcbcbc
+$brightgray: #e5e5e5
+
 
 body
 
@@ -16,24 +21,24 @@ ul
   :clear both
 
 .gradient
-  :background #e5e5e5 /* Old browsers */
-  :background -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%) /* FF3.6+ */
-  :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#bcbcbc)) /* Chrome,Safari4+ */
-  :background -webkit-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Chrome10+,Safari5.1+ */
-  :background -o-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* Opera11.10+ */
-  :background -ms-linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* IE10+ */
-  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 ) /* IE6-9 */
-  :background linear-gradient(top, #e5e5e5 0%,#bcbcbc 100%) /* W3C */
+  :background $brightgray /* Old browsers */
+  :background -moz-linear-gradient(top, $brightgray 0%, $midgray 50%) /* FF3.6+ */
+  :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,$brightgray), color-stop(50%,$midgray)) /* Chrome,Safari4+ */
+  :background -webkit-linear-gradient(top, $brightgray 0%,$midgray 50%) /* Chrome10+,Safari5.1+ */
+  :background -o-linear-gradient(top, $brightgray 0%,$midgray 50%) /* Opera11.10+ */
+  :background -ms-linear-gradient(top, $brightgray 0%,$midgray 50%) /* IE10+ */
+  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='$brightgray', endColorstr='$midgray',GradientType=0 ) /* IE6-9 */
+  :background linear-gradient(top, $brightgray 0%,$midgray 50%) /* W3C */
 
 .reverse_gradient
-  :background #e5e5e5 /* Old browsers */
-  :background -moz-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%) /* FF3.6+ */
-  :background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(100%,#e5e5e5)) /* Chrome,Safari4+ */
-  :background -webkit-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* Chrome10+,Safari5.1+ */
-  :background -o-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* Opera11.10+ */
-  :background -ms-linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* IE10+ */
-  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#e5e5e5',GradientType=0 ) /* IE6-9 */
-  :background linear-gradient(top, #bcbcbc 0%,#e5e5e5 100%) /* W3C */
+  :background $brightgray /* Old browsers */
+  :background -moz-linear-gradient(top, $midgray 70%, $darkgray 100%) /* FF3.6+ */
+  :background -webkit-gradient(linear, left top, left bottom, color-stop(70%,$midgray), color-stop(100%,$darkgray)) /* Chrome,Safari4+ */
+  :background -webkit-linear-gradient(top, $midgray 70%,$darkgray 100%) /* Chrome10+,Safari5.1+ */
+  :background -o-linear-gradient(top, $midgray 70%,$darkgray 100%) /* Opera11.10+ */
+  :background -ms-linear-gradient(top, $midgray 70%,$darkgray 100%) /* IE10+ */
+  :filter progid:DXImageTransform.Microsoft.gradient( startColorstr='$midgray', endColorstr='$darkgray',GradientType=0 ) /* IE6-9 */
+  :background linear-gradient(top, $midgray 70%,$darkgray 100%) /* W3C */
 
 
 #whisper
@@ -50,7 +55,7 @@ ul
       
       a
         :padding $basemeasure*2 $basemeasure*4
-        :border 1px solid #9f9f9f
+        :border 1px solid $bordercolor
         @extend .gradient      
         &#first
           :border-top-left-radius $basemeasure * 3
@@ -73,7 +78,7 @@ ul
         :padding $basemeasure*2
         :background-color $basegray
         @extend .gradient
-        :border 1px solid #9f9f9f
+        :border 1px solid $bordercolor
         :border-bottom none
         :border-top-left-radius $basemeasure * 3
         :border-top-right-radius $basemeasure * 3
@@ -83,12 +88,26 @@ ul
           :font-size 12px
           :display inline
           :float right
+      .deviceslideout
+        :height 0
+        :overflow hidden
+        :border-left 1px solid $bordercolor
+        :border-right 1px solid $bordercolor
+        :background-color $midgray
+      .deviceoptions
+        :width 480px-$basemeasure*2
+        :height 100%
+        :padding $basemeasure
+        :margin 0 8px
+        :border 1px solid $bordercolor
+        :background-color $brightgray
+      
       .switch
         :width 249px
         :float left
         :background-color $basegray
         @extend .reverse_gradient
-        :border 1px solid #9f9f9f
+        :border 1px solid $bordercolor
         :border-top none
         :text-align center
         :padding $basemeasure*4 0

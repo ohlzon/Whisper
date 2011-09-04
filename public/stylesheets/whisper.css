@@ -12,23 +12,23 @@ ul {
 
 .gradient, #whisper ul#navigation li a, #whisper ul.devicelist li.device .deviceheader {
   background: #e5e5e5;
-  background: -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bcbcbc));
-  background: -webkit-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-  background: -o-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-  background: -ms-linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bcbcbc',GradientType=0 );
-  background: linear-gradient(top, #e5e5e5 0%, #bcbcbc 100%); }
+  background: -moz-linear-gradient(top, #e5e5e5 0%, #bcbcbc 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #bcbcbc));
+  background: -webkit-linear-gradient(top, #e5e5e5 0%, #bcbcbc 50%);
+  background: -o-linear-gradient(top, #e5e5e5 0%, #bcbcbc 50%);
+  background: -ms-linear-gradient(top, #e5e5e5 0%, #bcbcbc 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$brightgray', endColorstr='$midgray',GradientType=0 );
+  background: linear-gradient(top, #e5e5e5 0%, #bcbcbc 50%); }
 
 .reverse_gradient, #whisper ul.devicelist li.device .switch {
   background: #e5e5e5;
-  background: -moz-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bcbcbc), color-stop(100%, #e5e5e5));
-  background: -webkit-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%);
-  background: -o-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%);
-  background: -ms-linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcbcbc', endColorstr='#e5e5e5',GradientType=0 );
-  background: linear-gradient(top, #bcbcbc 0%, #e5e5e5 100%); }
+  background: -moz-linear-gradient(top, #bcbcbc 70%, #9a9a9a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #bcbcbc), color-stop(100%, #9a9a9a));
+  background: -webkit-linear-gradient(top, #bcbcbc 70%, #9a9a9a 100%);
+  background: -o-linear-gradient(top, #bcbcbc 70%, #9a9a9a 100%);
+  background: -ms-linear-gradient(top, #bcbcbc 70%, #9a9a9a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$midgray', endColorstr='$darkgray',GradientType=0 );
+  background: linear-gradient(top, #bcbcbc 70%, #9a9a9a 100%); }
 
 #whisper {
   width: 500px;
@@ -66,6 +66,19 @@ ul {
           font-size: 12px;
           display: inline;
           float: right; }
+      #whisper ul.devicelist li.device .deviceslideout {
+        height: 0;
+        overflow: hidden;
+        border-left: 1px solid #9f9f9f;
+        border-right: 1px solid #9f9f9f;
+        background-color: #bcbcbc; }
+      #whisper ul.devicelist li.device .deviceoptions {
+        width: 468px;
+        height: 100%;
+        padding: 6px;
+        margin: 0 8px;
+        border: 1px solid #9f9f9f;
+        background-color: #e5e5e5; }
       #whisper ul.devicelist li.device .switch {
         width: 249px;
         float: left;
