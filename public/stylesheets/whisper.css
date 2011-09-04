@@ -7,6 +7,9 @@ ul {
     margin: 0;
     padding: 0; }
 
+.clear {
+  clear: both; }
+
 #whisper {
   width: 500px;
   margin: auto; }
@@ -34,8 +37,37 @@ ul {
           border-bottom-right-radius: 18px; }
   #whisper h2 {
     font-size: 12px; }
-  #whisper ul.devicelist li {
-    margin: 24px 0; }
+  #whisper ul.devicelist {
+    width: 100%; }
+    #whisper ul.devicelist li.device {
+      margin: 12px 0; }
+      #whisper ul.devicelist li.device .deviceheader {
+        padding: 12px;
+        background-color: #cccccc;
+        border: 1px solid #9f9f9f;
+        border-bottom: none;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px; }
+        #whisper ul.devicelist li.device .deviceheader a {
+          padding: 12px; }
+        #whisper ul.devicelist li.device .deviceheader .state {
+          font-size: 12px;
+          display: inline;
+          float: right; }
+      #whisper ul.devicelist li.device .switch {
+        width: 249px;
+        float: left;
+        background-color: #cccccc;
+        border: 1px solid #9f9f9f;
+        border-top: none;
+        text-align: center;
+        padding: 24px 0; }
+        #whisper ul.devicelist li.device .switch.on {
+          border-bottom-left-radius: 18px;
+          border-right: none; }
+        #whisper ul.devicelist li.device .switch.off {
+          border-bottom-right-radius: 18px;
+          border-left: none; }
   #whisper form label {
     margin-top: 12px;
     margin-right: 12px; }

@@ -1,12 +1,12 @@
 <h2>List of Devices configured through Whisper</h2> 
 <ul class="devicelist">
   <% @devices.each do |f| %>
-    <li>
-      <strong><%= link_to f.name, device_path(f) %></strong><br />
-      <%= link_to 'Turn on', on_device_path(f), :class => "switch on", :id => f.id %><br />
-      <%= link_to 'Turn off', off_device_path(f), :class => "switch off", :id => f.id %><br />
+    <li class="device">
+      <div class="deviceheader"><%= link_to f.name, device_path(f) %><p class="<%= f.id %>state state">on</p></div>
+      <%= link_to 'Turn on', on_device_path(f), :class => "switch on", :id => f.id %>
+      <%= link_to 'Turn off', off_device_path(f), :class => "switch off", :id => f.id %>
     </li>
-    <p class="<%= f.id %>state">on</p>
+    <div class="clear"></div>
   <% end %>
 </ul><br />
 <%= link_to 'writeconfig', writeconfig_devices_path %><br />

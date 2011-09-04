@@ -1,4 +1,5 @@
 $basemeasure: 6px
+$basegray: #cccccc
 
 body
 
@@ -10,6 +11,9 @@ ul
   li
     :margin 0
     :padding 0
+
+.clear
+  :clear both
 
 #whisper
   :width 500px
@@ -49,9 +53,36 @@ ul
     :font-size $basemeasure*2
 
   ul.devicelist
-    li
-      :margin $basemeasure*4 0
-
+    :width 100%
+    li.device
+      :margin $basemeasure*2 0
+      .deviceheader
+        :padding $basemeasure*2
+        :background-color $basegray
+        :border 1px solid #9f9f9f
+        :border-bottom none
+        :border-top-left-radius $basemeasure * 3
+        :border-top-right-radius $basemeasure * 3
+        a
+          :padding $basemeasure*2
+        .state
+          :font-size 12px
+          :display inline
+          :float right
+      .switch
+        :width 249px
+        :float left
+        :background-color $basegray
+        :border 1px solid #9f9f9f
+        :border-top none
+        :text-align center
+        :padding $basemeasure*4 0
+        &.on
+          :border-bottom-left-radius $basemeasure * 3
+          :border-right none
+        &.off
+          :border-bottom-right-radius $basemeasure * 3
+          :border-left none
   form
     label
       :margin-top $basemeasure*2
