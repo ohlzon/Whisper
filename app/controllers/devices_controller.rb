@@ -16,6 +16,7 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
+    @randomnumber = rand(99999999)
   end
   
   def update
