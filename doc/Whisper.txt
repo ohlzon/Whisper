@@ -11,3 +11,4 @@ Models
     unit
     location
 	
+When a device i created, a run-on-schedule-file is also created in [location]. Cron will be set up to run this file every 5 minutes.
