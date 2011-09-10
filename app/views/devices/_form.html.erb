@@ -18,10 +18,11 @@
 <div class="field">
   <%= f.label "House" %><br />
   <%= f.text_field :house %>
+  <p><%= @randomnumber %></p>
 </div>
 <div class="field">
   <%= f.label "Unit number" %><br />
-  <%= f.text_field :unit %>
+  <%= f.select("unit", Unit::UNITS) %>
 </div>
 <div class="field">
   <%= f.submit %>
