@@ -1,0 +1,4 @@
+<% @devices.each do |f| %>
+  <%= link_to "Delete " + f.name, f, :method => :delete %>
+  <div class="clear"></div>
+<% end %>

@@ -1,3 +1,6 @@
+html {
+  height: 101%; }
+
 ul {
   margin: 0;
   padding: 0;
@@ -18,29 +21,31 @@ a {
 
 .whisper {
   width: 500px;
-  margin: auto; }
+  margin: auto;
+  background-color: silver; }
   .whisper ul#navigation {
     margin: 24px 0; }
-    .whisper ul#navigation li {
-      display: inline;
-      margin-left: -5px; }
-      .whisper ul#navigation li a {
-        padding: 12px 24px;
-        border: 1px solid #9f9f9f;
-        background: #e1e1e1;
-        background: -moz-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e1e1e1), color-stop(10%, #bcbcbc));
-        background: -webkit-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
-        background: -o-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
-        background: -ms-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$brightgray', endColorstr='$midgray',GradientType=0 );
-        background: linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%); }
-        .whisper ul#navigation li a#first {
-          border-top-left-radius: 18px;
-          border-bottom-left-radius: 18px; }
-        .whisper ul#navigation li a#last {
-          border-top-right-radius: 18px;
-          border-bottom-right-radius: 18px; }
+    .whisper ul#navigation li a {
+      float: left;
+      width: 117px;
+      padding: 12px 24px;
+      border: 1px solid #9f9f9f;
+      background: #e1e1e1;
+      background: -moz-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e1e1e1), color-stop(10%, #bcbcbc));
+      background: -webkit-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
+      background: -o-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
+      background: -ms-linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$brightgray', endColorstr='$midgray',GradientType=0 );
+      background: linear-gradient(top, #e1e1e1 0%, #bcbcbc 10%); }
+      .whisper ul#navigation li a#first {
+        border-right: 0;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px; }
+      .whisper ul#navigation li a#last {
+        border-left: 0;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px; }
   .whisper h2 {
     font-size: 12px; }
   .whisper ul.devicelist {
