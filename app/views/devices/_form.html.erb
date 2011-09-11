@@ -16,13 +16,12 @@
   <%= f.select("protocol", Protocol::PROTOCOLS ) %>
 </div>
 <div class="field">
-  <%= f.label "House" %><br />
-  <%= f.text_field :house %>
-  <p><%= @randomnumber %></p>
+  <%= f.hidden_field :house, :value => @housenumber %>
 </div>
 <div class="field">
   <%= f.label "Unit number" %><br />
-  <%= f.select("unit", Unit::UNITS) %>
+<!--  <%= f.select("unit", Unit::UNITS) %> -->
+  <%= f.hidden_field :unit, :value => @unitnumber %>
 </div>
 <div class="field">
   <%= f.submit %>

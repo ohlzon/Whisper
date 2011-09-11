@@ -16,7 +16,11 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
-    @randomnumber = rand(99999999)
+    takenhousenumbers = Device.all.map(&:house)
+    until @housenumber and not takenhousenumbers.include?(@housenumber)
+        @housenumber = rand(67000000)
+    end
+    @unitnumber = 1+rand(16)
   end
   
   def update
