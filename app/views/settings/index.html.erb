@@ -1,4 +1,6 @@
+<h1>Devices</h1>
 <% @devices.each do |f| %>
+  <%= f.name %>
   <%= link_to "Delete " + f.name, f, :method => :delete %>
   <div class="clear"></div>
 <% end %>

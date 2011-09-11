@@ -10,6 +10,11 @@ ul {
     margin: 0;
     padding: 0; }
 
+h1 {
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0; }
+
 a {
   color: #3f3f3f; }
   a:hover {
@@ -21,8 +26,7 @@ a {
 
 .whisper {
   width: 500px;
-  margin: auto;
-  background-color: silver; }
+  margin: auto; }
   .whisper ul#navigation {
     margin: 24px 0; }
     .whisper ul#navigation li a {
@@ -71,7 +75,6 @@ a {
           text-align: center;
           width: 100%;
           font-weight: normal;
-          font-size: 24px;
           margin: 0; }
         .whisper ul.devicelist li.device .deviceheader a {
           padding: 12px; }
