@@ -36,6 +36,7 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(params[:device])
     if @device.save
+      Device.writeconfig
       redirect_to(@device, :notice => 'Device saved')
     end
   end
