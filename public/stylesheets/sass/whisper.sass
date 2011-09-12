@@ -1,4 +1,8 @@
+// Measures
 $basemeasure: 6px
+$deviceoptionsheight: 140px // Remember to modify this measure in js too
+
+// Colors
 $basegray: #cccccc
 $bordercolor: #9f9f9f
 $brightgray: #e1e1e1
@@ -99,7 +103,7 @@ a
           :font-weight normal
           :margin 0
         a
-          :padding $basemeasure*2
+          :display block
         .state
           :font-size 12px
           :display inline
@@ -112,12 +116,25 @@ a
         :background-color $shadygray
       .deviceoptions
         :width 480px-$basemeasure*2
-        :height 100px-$basemeasure*6
+        :height $deviceoptionsheight -$basemeasure*6
         :padding $basemeasure
         :margin $basemeasure*2 8px
         :border 1px solid $bordercolor
         :background-color $brightgray
-      
+        .button
+          :width 150px
+          :height $deviceoptionsheight - 38
+          :display block
+          :float left
+          :border 1px solid $bordercolor
+          :text-align center
+          :font-size 20px
+          :margin 0 $basemeasure 0 0 
+          &:first-child
+            :margin 0 $basemeasure 0 0
+          &:last-child
+            :margin 0
+            
       .switch
         :width 249px
         :float left
@@ -131,8 +148,9 @@ a
           :border-bottom-left-radius $basemeasure * 3
           :border-right none
         &.off
+          :width 248px
           :border-bottom-right-radius $basemeasure * 3
-          :border-left none
+          :border-left 1px solid $bordercolor
   form
     label
       :margin-top $basemeasure*2

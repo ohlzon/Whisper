@@ -37,7 +37,7 @@ class DevicesController < ApplicationController
     @device = Device.new(params[:device])
     if @device.save
       Device.writeconfig
-      redirect_to(@device, :notice => 'Device saved')
+      redirect_to(devices_path, :notice => 'Device saved')
     end
   end
 

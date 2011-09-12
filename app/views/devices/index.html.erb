@@ -1,16 +1,17 @@
-<h2>List of Devices configured through Whisper</h2> 
 <ul class="devicelist">
   <% @devices.each do |f| %>
-    <li class="device">
-      <div class="deviceheader"><h1><a href="#" title="nil" class="devicetitle"><%= f.name %></a></h1>
-      <!--<p class="<%= f.id %>state state">on</p>--></div>
+    <li class="device" id="<%= f.id %>">
+      <div class="deviceheader">
+        <h1><a href="#" title="nil" class="devicetitle"><%= f.name %></a></h1>
+      </div>
       <div class="deviceslideout">
         <div class="deviceoptions">
-          <%= link_to "Delete " + f.name, f, :method => :delete %>
+          <%= link_to "Learn", "#", :class => "button learn" %>
+          <%= link_to "Delete", f, :method => :delete, :confirm => 'Are you sure?', :class => "button delete" %>
         </div>
       </div>
-      <%= link_to 'Turn on', on_device_path(f), :class => "switch on", :id => f.id %>
-      <%= link_to 'Turn off', off_device_path(f), :class => "switch off", :id => f.id %>
+      <%= link_to 'Turn on', "#", :class => "switch on", :id => f.id %>
+      <%= link_to 'Turn off', "#", :class => "switch off", :id => f.id %>
     </li>
     <div class="clear"></div>
   <% end %>
