@@ -1,0 +1,8 @@
+<%= link_to 'New event', new_event_path  %>
+<% @events.each do |f| %>
+  <%= f.device %> <br />
+  <% if f.mon? %>Monday<% end %>
+  <% if f.tue? %>Tuesday<% end %>
+  <%= f.time %>
+  <%= f.state %> <br />
+<% end %>

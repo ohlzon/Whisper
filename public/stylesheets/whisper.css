@@ -131,6 +131,19 @@ a {
           width: 248px;
           border-bottom-right-radius: 18px;
           border-left: 1px solid #9f9f9f; }
+  .whisper form .field {
+    width: 100%;
+    float: left;
+    margin: 12px 0; }
+  .whisper form .time select {
+    width: auto; }
+  .whisper form ul {
+    width: 420px;
+    margin: auto; }
+    .whisper form ul li {
+      width: 60px;
+      float: left;
+      text-align: center; }
   .whisper form label {
     margin-top: 12px;
     margin-right: 12px; }

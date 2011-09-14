@@ -5,5 +5,6 @@ Whisper::Application.routes.draw do
     get :learn, :on => :member
   end
   resources :settings
+  resources :events
   root :to => 'devices#index'
 end

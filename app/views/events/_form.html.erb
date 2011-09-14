@@ -1,0 +1,29 @@
+<%= form_for([@event]) do |f| %>
+  <div class="field">
+    <%= f.label "Device: " %><br />
+    <%= f.select(:id, @devices) %>
+  </div>
+  <div class="field">
+    <ul>
+      <li>M<br /><%= f.check_box :mon %></li>
+      <li>T<br /><%= f.check_box :tue %></li>
+      <li>W<br /><%= f.check_box :wed %></li>
+      <li>T<br /><%= f.check_box :thu %></li>
+      <li>F<br /><%= f.check_box :fri %></li>
+      <li>S<br /><%= f.check_box :sat %></li>
+      <li>S<br /><%= f.check_box :sun %></li>
+    </ul>
+  </div>
+  <div class="field time">
+    <%= f.label "Time" %><br />
+    <%= f.select :hour, ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'] %>
+    <%= f.select :minute, ['00','15','30','45'] %>
+  </div>
+  <div class="field">
+    <%= f.label "State to set" %><br />
+    <%= f.select(:state, ['on','off'])%>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,5 +10,8 @@ Models
     house
     unit
     location
-	
-When a device i created, a run-on-schedule-file is also created in [location]. Cron will be set up to run this file every 5 minutes.
+  Event
+    device (device to be controlled)
+    day (days of week event should be triggered)
+    time (time of event)
+    state (state to be set, 0=off 100=on, dimming in between)
