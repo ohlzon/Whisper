@@ -16,6 +16,8 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
+    @devicetypes = Devicetype::DEVICE_TYPES
+    @protocols = Protocol::PROTOCOLS
     takenhousenumbers = Device.all.map(&:house)
     until @housenumber and not takenhousenumbers.include?(@housenumber)
         @housenumber = rand(67000000)
