@@ -1,8 +1,13 @@
 <%= link_to 'New event', new_event_path  %>
-<% @events.each do |f| %>
-  <%= f.device %> <br />
-  <% if f.mon? %>Monday<% end %>
-  <% if f.tue? %>Tuesday<% end %>
-  <%= f.hour %>:<%= f.minute %><br />
-  <%= f.state %> <br />
+<% @events.each do |event| %>
+  <h2><%= event.device.name %></h2>
+  <p>Scheduled on <%= event.scheduled_days.join(", ") %></p>
+  <p>Scheduled at <%= event.time %></p>
+  <p>State: <%= event.on? ? "On" : "Off" %></p>
+  <p>Crontask: <%= event.crontask %></p>
+  <p>--- --- --- ---</p>
+  Delete: <%= link_to "Delete", event, :method => :delete %>
+  <br />
+  <br />
+  <br />
 <% end %>

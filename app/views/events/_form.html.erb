@@ -1,7 +1,7 @@
 <%= form_for([@event]) do |f| %>
   <div class="field">
     <%= f.label "Device: " %><br />
-    <%= f.select(:id, @devices) %>
+    <%= f.select(:device_id, @devices) %>
   </div>
   <div class="field">
     <ul>
@@ -16,12 +16,12 @@
   </div>
   <div class="field time">
     <%= f.label "Time" %><br />
-    <%= f.select :hour, 00..23, :selected => "12" %>
+    <%= f.select :hour, (0..23).map { |n| "%.2d" % n }, :selected => "12" %>
     <%= f.select :minute, ['00','15','30','45'] %>
   </div>
   <div class="field">
     <%= f.label "State to set" %><br />
-    <%= f.select(:state, ['on','off'])%>
+    <%= f.select( :state, { "On" => 1, "Off" => 0 }) %>
   </div>
   <div class="field">
     <%= f.submit %>

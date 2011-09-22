@@ -12,6 +12,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :hour
       t.integer :minute
       t.integer :state
+      t.string  :crontask
 
       t.timestamps
     end

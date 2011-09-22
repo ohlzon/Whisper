@@ -3,6 +3,7 @@ Whisper::Application.routes.draw do
     get :on, :on => :member
     get :off, :on => :member
     get :learn, :on => :member
+    get :cronalize, :on => :member
   end
   resources :settings
   resources :events
