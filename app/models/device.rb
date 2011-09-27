@@ -20,13 +20,13 @@ class Device < ActiveRecord::Base
   end
   
   def on!
-    p "Switched on" # Used for development
+    p "Switched " + name.to_s + " on" # Used for development
     #`tdtool -n #{id} 2>&1` # Used for production
     Device.find(id).update_attributes(:state => "on")
   end
 
   def off!
-    p "Switched off" # Used for development
+    p "Switched " + name.to_s + " off" # Used for development
     # `tdtool -f #{id} 2>&1` # Used for production
     Device.find(id).update_attributes(:state => "off")
   end

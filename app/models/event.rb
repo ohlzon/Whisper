@@ -23,14 +23,19 @@ class Event < ActiveRecord::Base
   end
   
   def self.due_for_running
-    puts "Running due_for_running"
     #where('next_run_at < ?', Time.zone.now) ## Production
     where('next_run_at > ?', Time.zone.now) ## Development
   end
   
   # TODO run! runs calc_next_run_at two times, one time for the callback and one time manually. Can we optimize that? (Gnäll på lowe)
   def run!
-    puts "Switching " + device.name + " " + on?.to_s + " " + "at " + hour.to_s + ":" + minute.to_s + " on "
+    puts "Switching " + device.name + " " + on?.to_s + " " + "at " + hour.to_s + ":" + minute.to_s + " on " + Time.zone.now.to_s
+    if on?
+      device.on!
+    else
+      device.off!
+    end
+    sleep 2
     self.next_run_at = self.calc_next_run
   end
   
