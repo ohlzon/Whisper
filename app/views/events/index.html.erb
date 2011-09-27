@@ -4,7 +4,7 @@
   <p>Scheduled on <%= event.scheduled_days.join(", ") %></p>
   <p>Scheduled at <%= event.time %></p>
   <p>State: <%= event.on? ? "On" : "Off" %></p>
-  <p>Crontask: <%= event.crontask %></p>
+  <p>Next run at: <%= event.next_run_at %></p>
   <p>--- --- --- ---</p>
   Delete: <%= link_to "Delete", event, :method => :delete %>
   <br />

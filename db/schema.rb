@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20110914183131) do
     t.integer  "hour"
     t.integer  "minute"
     t.integer  "state"
-    t.string   "crontask"
+    t.string   "next_run_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

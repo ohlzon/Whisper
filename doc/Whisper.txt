@@ -15,3 +15,6 @@ Models
     day (days of week event should be triggered)
     time (time of event)
     state (state to be set, 0=off 100=on, dimming in between)
+    
+bundle exec rake run_cron_entries should be executed by cron 16 minutes past the hour
+
