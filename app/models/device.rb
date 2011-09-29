@@ -1,7 +1,7 @@
 class Device < ActiveRecord::Base
   def self.writeconfig
-    configfile = File.open( "doc/tellstick.conf","w") # Use this row for development purposes
-    # configfile = File.open( "/etc/tellstick.conf","w") # Use this row for production (remember to chown webuser/tellstick.conf)
+    # configfile = File.open( "doc/tellstick.conf","w") # Use this row for development purposes
+    configfile = File.open( "/etc/tellstick.conf","w") # Use this row for production (remember to chown webuser/tellstick.conf)
     configfile.write 'deviceNode = "/dev/tellstick"' + "\n"
     Device.all.each do |f|
       configfile.write 'device {' + "\n"
@@ -20,14 +20,14 @@ class Device < ActiveRecord::Base
   end
   
   def on!
-    p "Switched " + name.to_s + " on" # Used for development
-    #`tdtool -n #{id} 2>&1` # Used for production
+    #p "Switched " + name.to_s + " on" # Used for development
+    `tdtool -n #{id} 2>&1` # Used for production
     Device.find(id).update_attributes(:state => "on")
   end
 
   def off!
-    p "Switched " + name.to_s + " off" # Used for development
-    # `tdtool -f #{id} 2>&1` # Used for production
+    #p "Switched " + name.to_s + " off" # Used for development
+    `tdtool -f #{id} 2>&1` # Used for production
     Device.find(id).update_attributes(:state => "off")
   end
 
