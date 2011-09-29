@@ -23,6 +23,7 @@ class Event < ActiveRecord::Base
   end
   
   def self.due_for_running
+    puts 'Running self.due_for_running'
     where('next_run_at < ?', Time.zone.now) ## Production
     #where('next_run_at > ?', Time.zone.now) ## Development
   end
