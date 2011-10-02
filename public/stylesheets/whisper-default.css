@@ -1,0 +1,82 @@
+/*
+Syntax error: Invalid CSS after "*": expected selector, was "/"
+        on line 178 of /Users/ohlzon/Developer/o3industries/rails/whisper/Whisper/public/stylesheets/sass/whisper-default.sass
+
+173:       :margin-top $basemeasure*2
+174:       :margin-right $basemeasure*2
+175: 
+176:   #notice
+177:     :height $basemeasure*4
+178: */
+
+Backtrace:
+/Users/ohlzon/Developer/o3industries/rails/whisper/Whisper/public/stylesheets/sass/whisper-default.sass:178
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/scss/parser.rb:841:in `expected'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/scss/static_parser.rb:19:in `parse_selector'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:229:in `visit_rule'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/tree/root_node.rb:20:in `render'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/engine.rb:241:in `block in render'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/util.rb:297:in `silence_sass_warnings'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/engine.rb:241:in `render'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/sass-3.1.7/lib/sass/plugin/rack.rb:51:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activerecord-3.0.10/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activerecord-3.0.10/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activerecord-3.0.10/lib/active_record/query_cache.rb:12:in `cache'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activerecord-3.0.10/lib/active_record/query_cache.rb:31:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activerecord-3.0.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activesupport-3.0.10/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/railties-3.0.10/lib/rails/rack/logger.rb:13:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/activesupport-3.0.10/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/actionpack-3.0.10/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/railties-3.0.10/lib/rails/application.rb:168:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/railties-3.0.10/lib/rails/application.rb:77:in `method_missing'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/railties-3.0.10/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Users/ohlzon/.rvm/gems/ruby-1.9.2-p290@whisper/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/Users/ohlzon/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/ohlzon/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/ohlzon/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"*\": expected selector, was \"/\"\A         on line 178 of /Users/ohlzon/Developer/o3industries/rails/whisper/Whisper/public/stylesheets/sass/whisper-default.sass\A \A 173:       :margin-top $basemeasure*2\A 174:       :margin-right $basemeasure*2\A 175: \A 176:   #notice\A 177:     :height $basemeasure*4\A 178: */"; }

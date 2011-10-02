@@ -8,7 +8,10 @@
 </head>
 <body>
 <div class="whisper">
-    <%= render :partial => 'globals/navigation' %>
+    <div id="header"><h1>Whisper</h1></div>
+    <div id="menu">
+      <%= render :partial => 'globals/navigation' %>
+    </div>
     <div id="notice"><%= notice %></div>
     <%= yield %>
 </div>

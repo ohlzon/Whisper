@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :device
-  before_save { self.calc_next_run }
+  before_save { self.calc_next_run! }
   
   def time
     "%.2d:%.2d" % [hour, minute]
@@ -24,8 +24,10 @@ class Event < ActiveRecord::Base
   
   def self.due_for_running
     puts 'Running self.due_for_running'
-    where('next_run_at < ?', Time.zone.now) ## Production
+    puts "Calculating next run..."
     #where('next_run_at > ?', Time.zone.now) ## Development
+    puts 'Next run at: ' + next_run_at
+    where('next_run_at < ?', Time.zone.now) ## Production
   end
   
   # TODO run! runs calc_next_run_at two times, one time for the callback and one time manually. Can we optimize that? (Gnäll på lowe)
@@ -37,10 +39,12 @@ class Event < ActiveRecord::Base
       device.off!
     end
     sleep 2
-    self.next_run_at = self.calc_next_run
+    self.calc_next_run!
+    self.save!
   end
   
-  def calc_next_run
+  def calc_next_run!
+    puts 'Runnint calc_next_run'
     date = Time.zone.now.midnight
     self.next_run_at = nil
     until self.next_run_at

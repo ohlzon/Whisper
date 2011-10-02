@@ -1,0 +1,28 @@
+.whisper {
+  width: 100%;
+  margin: auto; }
+  .whisper .clear {
+    clear: both; }
+  .whisper #header h1 {
+    width: 800px;
+    margin: auto;
+    padding: 16px;
+    font-size: 48px;
+    font-weight: 200;
+    color: #ebebeb; }
+  .whisper #menu {
+    width: 100%;
+    background-color: #ebebeb;
+    border-bottom: 1px solid #46413c;
+    border-top: 1px solid #46413c; }
+    .whisper #menu ul {
+      width: 800px;
+      padding: 0;
+      margin: auto;
+      padding: 8px 0; }
+      .whisper #menu ul li {
+        font-size: 20px;
+        display: inline;
+        margin: 0 32px; }
+  .whisper #devicelist {
+    width: 100%; }
