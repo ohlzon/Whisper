@@ -23,15 +23,12 @@ class Event < ActiveRecord::Base
   end
   
   def self.due_for_running
-    puts 'Running self.due_for_running'
-    puts "Calculating next run..."
-    #where('next_run_at > ?', Time.zone.now) ## Development
     where('next_run_at < ?', Time.zone.now) ## Production
   end
   
   # TODO run! runs calc_next_run_at two times, one time for the callback and one time manually. Can we optimize that? (Gnäll på lowe)
   def run!
-    puts "Switching " + device.name + " " + on?.to_s + " " + "at " + hour.to_s + ":" + minute.to_s + " on " + Time.zone.now.to_s
+    puts "Switching " + device.id.to_s + " " + on?.to_s + " " + "at " + hour.to_s + ":" + minute.to_s + " on " + Time.zone.now.to_s
     if on?
       device.on!
     else
@@ -43,24 +40,25 @@ class Event < ActiveRecord::Base
   end
   
   def calc_next_run!
-    puts 'Running calc_next_run'
-    date = Time.zone.now.midnight
+    t = Time.zone.now.change(:hour => self.hour, :min => self.minute)
     self.next_run_at = nil
     until self.next_run_at
-      date += 1.day
-      self.next_run_at = date.change(:hour => self.hour, :min => self.minute) if date_is_run_day?(date)
+      self.next_run_at = t if is_run_time?(t)
+      t += 1.day
     end
   end
 
   private
-  def date_is_run_day?(date)
-    return true if date.monday? && self.mon?
-    return true if date.tuesday? && self.tue?
-    return true if date.wednesday? && self.wed?
-    return true if date.thursday? && self.thu?
-    return true if date.friday? && self.fri?
-    return true if date.saturday? && self.sat?
-    return true if date.sunday? && self.sun?
+  def is_run_time?(time)
+    unless time.past?
+      return true  if time.monday? && self.mon?
+      return true  if time.tuesday? && self.tue?
+      return true  if time.wednesday? && self.wed?
+      return true  if time.thursday? && self.thu?
+      return true  if time.friday? && self.fri?
+      return true  if time.saturday? && self.sat?
+      return true  if time.sunday? && self.sun?
+    end
 
     return false
   end
