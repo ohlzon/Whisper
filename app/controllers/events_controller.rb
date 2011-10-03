@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     if @event.save
+      Event.calc_next_run!
       redirect_to(events_path, :notice => 'Schedule item saved')
     end
   end

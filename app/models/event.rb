@@ -44,7 +44,7 @@ class Event < ActiveRecord::Base
   end
   
   def calc_next_run!
-    puts 'Runnint calc_next_run'
+    puts 'Running calc_next_run'
     date = Time.zone.now.midnight
     self.next_run_at = nil
     until self.next_run_at
