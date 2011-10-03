@@ -3,6 +3,7 @@
     <li class="device" id="<%= f.id %>">
       <div class="deviceheader">
         <h1><a href="#" title="nil" class="devicetitle"><%= f.name %></a></h1>
+        <p class="location"><%= f.location %></p>
       </div>
       <div class="deviceslideout">
         <div class="deviceoptions">
@@ -10,9 +11,9 @@
           <%= link_to "Delete", f, :method => :delete, :confirm => 'Are you sure?', :class => "button delete" %>
         </div>
       </div>
-      <%= link_to 'Turn on', "#", :class => "switch on", :id => f.id %>
-      <%= link_to 'Turn off', "#", :class => "switch off", :id => f.id %>
+      <%= link_to 'On', "#", :class => "switch on", :id => f.id %>
+      <%= link_to 'Off', "#", :class => "switch off", :id => f.id %>
     </li>
-    <div class="clear"></div>
   <% end %>
-</ul><br />
+</ul>
+<div class="clear"></div>

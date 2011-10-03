@@ -1,7 +1,24 @@
+// Measures
 $dm: 8px
+$contentwidth: 900px
+$menuwidth: 600px // Has to be a product of three
+
+// The following two should in some way add up to contentwidth
+$devicebase: 260px // Base measure for devices
+$devicemargin: 40px // Total margin
+
+// Colors
+$bodycolor: #1f1f1f
 $bordercolor: #46413c
-$contentwidth: 800px
-$headergray: #ebebeb
+$contentbg: #ebebeb
+$deviceheader-color: #3f3f3f
+$switchcolor: #9f9f9f
+
+// Do not modify these unless you're sure about what you're doing
+$switchbase: $devicebase/2
+
+body
+  :background-color $bodycolor
 
 .whisper
   :width 100%
@@ -17,26 +34,83 @@ $headergray: #ebebeb
       :padding $dm*2
       :font-size 48px
       :font-weight 200
-      :color $headergray
+      :color $contentbg
   
   #menu
     :width 100%
-    :background-color $headergray
-    :border-bottom 1px solid $bordercolor
-    :border-top 1px solid $bordercolor
+    :background-color $contentbg
+    :border-bottom 4px solid $bordercolor
+    :border-top 4px solid $bordercolor
         
     ul
-      :width 800px
+      :width $menuwidth
       :padding 0
       :margin auto
-      :padding $dm 0
     
       li
-        :font-size 20px
         :display inline
-        :margin 0 $dm*4
+        :float left
+        :margin 0
         
+        a
+          :width 180px
+          :margin 0 6px
+          :padding $dm 0
+          :border 4px solid $bordercolor
+          :border-top none
+          :border-bottom none
+          :font-size 20px
+          :text-align center
+          :display block
+          &:hover
+            :text-decoration none
 
 
-  #devicelist
-    :width 100%
+  ul.devicelist
+    :width $contentwidth
+    :margin auto
+    
+    li.device
+      :width $devicebase
+      //:height $devicebase
+      :margin $devicemargin/2
+      :background-color $contentbg
+      :float left
+      :display inline
+      
+      .deviceheader
+
+        h1
+          :font-size $switchbase / 6
+          :text-align center
+          :margin 0
+          :padding 0
+          a
+            :color $deviceheader-color
+        
+        p.location
+          :font-size $switchbase / 8
+          :text-align center
+
+      .deviceslideout
+        :height 0
+        :overflow hidden
+        
+      .switch
+        //:height $switchbase - 1
+        :display inline
+        :float left
+        :text-align center
+        :font-size $switchbase/2
+        :padding $switchbase/3 0
+        :position relative
+        &.on
+          :border-top 1px solid $switchcolor
+          :border-right 1px solid $switchcolor
+          :width $switchbase - 1
+        &.off
+          :border-top 1px solid $switchcolor
+          :width $switchbase
+
+
+
