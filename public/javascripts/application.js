@@ -11,7 +11,7 @@ $(document).ready(function(){
   
   $("a.off").click(function(event){  
     event.preventDefault();
-    deviceid = $(this).parent().attr('id')
+    boxid = $(this).parent().attr('id')
     $.ajax({
       url: '/devices/' + $(this).attr('id') + '/off'
     });    
@@ -23,15 +23,15 @@ $(document).ready(function(){
     event.preventDefault();
     var title = $(this).parent().parent().parent();
     if ( title.hasClass('expanded') ) {
-      $(title).find('.deviceslideout').animate({
+      $(title).find('.boxslideout').animate({
         height: '0'
       }, 200, function(){
-        $(title).find('.deviceheader').css("border-bottom","0px");
+        $(title).find('.boxheader').css("border-bottom","0px");
         title.removeClass( "expanded ");
       });
     } else {
-      $(title).find('.deviceheader').css("border-bottom","1px solid #9f9f9f");
-      $(title).find('.deviceslideout').animate({
+      $(title).find('.boxheader').css("border-bottom","1px solid #9f9f9f");
+      $(title).find('.boxslideout').animate({
         height: '140'
       }, 200, function(){
         title.addClass( "expanded ");        

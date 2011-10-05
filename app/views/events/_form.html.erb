@@ -1,29 +1,37 @@
-<%= form_for([@event]) do |f| %>
-  <div class="field">
-    <%= f.label "Device: " %><br />
-    <%= f.select(:device_id, @devices) %>
-  </div>
-  <div class="field">
-    <ul>
-      <li>M<br /><%= f.check_box :mon %></li>
-      <li>T<br /><%= f.check_box :tue %></li>
-      <li>W<br /><%= f.check_box :wed %></li>
-      <li>T<br /><%= f.check_box :thu %></li>
-      <li>F<br /><%= f.check_box :fri %></li>
-      <li>S<br /><%= f.check_box :sat %></li>
-      <li>S<br /><%= f.check_box :sun %></li>
-    </ul>
-  </div>
-  <div class="field time">
-    <%= f.label "Time" %><br />
-    <%= f.select :hour, (0..23).map { |n| "%.2d" % n }, :selected => "12" %>
-    <%= f.select :minute, ['00','05','10','15','20','25','30','35','40','45','50','55'] %>
-  </div>
-  <div class="field">
-    <%= f.label "State to set" %><br />
-    <%= f.select( :state, { "On" => 1, "Off" => 0 }) %>
-  </div>
-  <div class="field">
-    <%= f.submit %>
-  </div>
-<% end %>
+<ul class="boxlist">
+  <li class="box">  
+    <div class="boxheader">
+      <h1>New Event</h1>
+    </div>
+    <%= form_for([@event]) do |f| %>
+      <div class="field">
+        <%= f.label "Device: " %><br />
+        <%= f.select(:device_id, @devices) %>
+      </div>
+      <div class="field">
+        <%= f.label "Days: "%>
+        <ul>
+          <li>Monday<%= f.check_box :mon %></li>
+          <li>Tuesday<%= f.check_box :tue %></li>
+          <li>Wednesday<%= f.check_box :wed %></li>
+          <li>Thursday<%= f.check_box :thu %></li>
+          <li>Friday<%= f.check_box :fri %></li>
+          <li>Saturday<%= f.check_box :sat %></li>
+          <li>Sunday<%= f.check_box :sun %></li>
+        </ul>
+      </div>
+      <div class="field time">
+        <%= f.label "Time" %><br />
+        <%= f.select :hour, (0..23).map { |n| "%.2d" % n }, :selected => "12" %>
+        <%= f.select :minute, ['00','05','10','15','20','25','30','35','40','45','50','55'] %>
+      </div>
+      <div class="field">
+        <%= f.label "State to set" %><br />
+        <%= f.select( :state, { "On" => 1, "Off" => 0 }) %>
+      </div>
+      <div class="field">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </li>  
+</ul>

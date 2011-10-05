@@ -1,76 +1,150 @@
-body {
-  background-color: #1f1f1f; }
+body, html {
+  height: 101%;
+  background-color: #1f1f1f;
+  padding-bottom: 100px; }
 
 .whisper {
   width: 100%;
+  padding-bottom: 100px;
   margin: auto; }
   .whisper .clear {
     clear: both; }
   .whisper #header h1 {
     width: 800px;
     margin: auto;
-    padding: 16px;
+    padding: 24px 16px 16px;
     font-size: 48px;
-    font-weight: 200;
+    font-weight: 100;
     color: #ebebeb; }
   .whisper #menu {
-    width: 100%;
-    background-color: #ebebeb;
-    border-bottom: 4px solid #46413c;
-    border-top: 4px solid #46413c; }
+    width: 100%; }
     .whisper #menu ul {
-      width: 600px;
+      width: 900px;
       padding: 0;
       margin: auto; }
       .whisper #menu ul li {
         display: inline;
         float: left;
+        text-shadow: 1px 1px white;
         margin: 0; }
         .whisper #menu ul li a {
-          width: 180px;
-          margin: 0 6px;
-          padding: 8px 0;
-          border: 4px solid #46413c;
-          border-top: none;
-          border-bottom: none;
-          font-size: 20px;
+          display: block;
+          width: 260px;
+          margin: 20px;
+          padding: 26px 0;
+          font-weight: 200;
+          font-size: 21.667px;
           text-align: center;
-          display: block; }
+          color: #1f1f1f;
+          background-color: #ebebeb;
+          border-radius: 16px; }
           .whisper #menu ul li a:hover {
-            text-decoration: none; }
-  .whisper ul.devicelist {
+            text-decoration: none;
+            background-color: #cccccc; }
+  .whisper ul.boxlist {
     width: 900px;
     margin: auto; }
-    .whisper ul.devicelist li.device {
+    .whisper ul.boxlist li.box {
       width: 260px;
       margin: 20px;
       background-color: #ebebeb;
+      border-radius: 16px;
+      text-shadow: 1px 1px white;
       float: left;
       display: inline; }
-      .whisper ul.devicelist li.device .deviceheader h1 {
+      .whisper ul.boxlist li.box.device {
+        height: 168px; }
+      .whisper ul.boxlist li.box.schedule {
+        height: 185.714px;
+        padding-bottom: 8px; }
+      .whisper ul.boxlist li.box .boxheader h1 {
         font-size: 21.667px;
         text-align: center;
         margin: 0;
         padding: 0; }
-        .whisper ul.devicelist li.device .deviceheader h1 a {
+        .whisper ul.boxlist li.box .boxheader h1.new {
+          padding: 65px 0 0; }
+        .whisper ul.boxlist li.box .boxheader h1 a {
+          width: 100%;
+          display: block;
           color: #3f3f3f; }
-      .whisper ul.devicelist li.device .deviceheader p.location {
+          .whisper ul.boxlist li.box .boxheader h1 a:hover {
+            background: none; }
+      .whisper ul.boxlist li.box .boxheader p.location {
         font-size: 16.25px;
         text-align: center; }
-      .whisper ul.devicelist li.device .deviceslideout {
+      .whisper ul.boxlist li.box p {
+        font-size: 13px;
+        padding: 0 8px; }
+        .whisper ul.boxlist li.box p a:hover {
+          background: none; }
+      .whisper ul.boxlist li.box .boxslideout {
         height: 0;
         overflow: hidden; }
-      .whisper ul.devicelist li.device .switch {
+        .whisper ul.boxlist li.box .boxslideout .deviceoptions a {
+          width: 100%;
+          font-size: 26px;
+          padding: 26px 0;
+          text-align: center;
+          font-weight: 100;
+          display: block; }
+          .whisper ul.boxlist li.box .boxslideout .deviceoptions a.learn {
+            border-bottom: 1px solid #9f9f9f; }
+          .whisper ul.boxlist li.box .boxslideout .deviceoptions a:hover {
+            background-color: #cccccc; }
+      .whisper ul.boxlist li.box .switch {
         display: inline;
         float: left;
         text-align: center;
         font-size: 65px;
+        font-weight: 100;
         padding: 43.333px 0;
         position: relative; }
-        .whisper ul.devicelist li.device .switch.on {
+        .whisper ul.boxlist li.box .switch.on {
           border-top: 1px solid #9f9f9f;
           border-right: 1px solid #9f9f9f;
           width: 129px; }
-        .whisper ul.devicelist li.device .switch.off {
+          .whisper ul.boxlist li.box .switch.on:hover {
+            border-bottom-left-radius: 16px; }
+        .whisper ul.boxlist li.box .switch.off {
           border-top: 1px solid #9f9f9f;
           width: 130px; }
+          .whisper ul.boxlist li.box .switch.off:hover {
+            border-bottom-right-radius: 16px; }
+      .whisper ul.boxlist li.box form .field {
+        width: 260px;
+        margin: auto; }
+        .whisper ul.boxlist li.box form .field label {
+          width: 220px;
+          margin: 0 20px;
+          text-align: left; }
+        .whisper ul.boxlist li.box form .field input, .whisper ul.boxlist li.box form .field select {
+          width: 220px;
+          margin: 0 10px;
+          padding: 8px; }
+        .whisper ul.boxlist li.box form .field select {
+          width: 260px -20px;
+          margin: 0 20px; }
+          .whisper ul.boxlist li.box form .field select#event_hour, .whisper ul.boxlist li.box form .field select#event_minute {
+            width: 65px;
+            margin: 0 0 0 20px; }
+        .whisper ul.boxlist li.box form .field #device_submit, .whisper ul.boxlist li.box form .field #event_submit {
+          width: 220px;
+          margin: 20px 20px 0; }
+        .whisper ul.boxlist li.box form .field ul {
+          width: 220px;
+          list-style-type: none;
+          padding: 0;
+          margin: 0 20px;
+          float: left; }
+          .whisper ul.boxlist li.box form .field ul li {
+            width: 65px;
+            display: inline;
+            float: left;
+            margin: 0 0 16px 0;
+            padding: 0; }
+      .whisper ul.boxlist li.box a {
+        color: #1f1f1f; }
+        .whisper ul.boxlist li.box a:hover {
+          text-decoration: none;
+          background-color: #cccccc; }

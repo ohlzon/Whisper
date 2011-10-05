@@ -1,13 +1,20 @@
-<%= link_to 'New event', new_event_path  %>
-<% @events.each do |event| %>
-  <h2><%= event.device.name %></h2>
-  <p>Scheduled on <%= event.scheduled_days.join(", ") %></p>
-  <p>Scheduled at <%= event.time %></p>
-  <p>State: <%= event.on? ? "On" : "Off" %></p>
-  <p>Next run at: <%= event.next_run_at %></p>
-  <p>--- --- --- ---</p>
-  Delete: <%= link_to "Delete", event, :method => :delete %>
-  <br />
-  <br />
-  <br />
-<% end %>
+
+<ul class="boxlist">
+  <% @events.each do |event| %>
+    <li class="box schedule">
+      <div class="boxheader">
+        <h1><%= event.device.name %></h1>
+      </div>
+      <p>Scheduled on <%= event.scheduled_days.join(", ") %></p>
+      <p>Scheduled at <%= event.time %></p>
+      <p>Scheduled to switch device <%= event.on? ? "on" : "off" %></p>
+      <p>Next run will be at: <%= event.next_run_at[0..-11] %></p>
+      <p><%= link_to "Delete scheduled event", event, :method => :delete %></p>
+    </li>
+  <% end %>
+  <li class="box schedule">
+    <div class="boxheader">  
+      <h1 class="new"><%= link_to 'New event...', new_event_path  %></h1>
+    </div>
+  </li>
+</ul>
