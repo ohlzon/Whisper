@@ -73,8 +73,10 @@ body, html {
       .whisper ul.boxlist li.box.device {
         height: 168px; }
       .whisper ul.boxlist li.box.schedule {
-        height: 185.714px;
+        height: 200px;
         padding-bottom: 16px; }
+        .whisper ul.boxlist li.box.schedule .boxheader h1.new {
+          padding: 86.667px 0 0; }
       .whisper ul.boxlist li.box .boxheader h1 {
         font-size: 21.667px;
         text-align: center;
