@@ -9,13 +9,31 @@ body, html {
   margin: auto; }
   .whisper .clear {
     clear: both; }
-  .whisper #header h1 {
-    width: 800px;
+  .whisper #header {
+    width: 900px;
     margin: auto;
-    padding: 24px 16px 16px;
-    font-size: 48px;
-    font-weight: 100;
-    color: #ebebeb; }
+    display: block;
+    height: 80px; }
+    .whisper #header h1 {
+      width: 200px;
+      margin: 0;
+      padding: 24px 16px 16px;
+      display: inline;
+      float: left;
+      font-size: 48px;
+      font-weight: 100;
+      color: #ebebeb; }
+    .whisper #header #notice {
+      width: 400px;
+      padding: 0 16px 0;
+      margin-top: 45px;
+      float: right; }
+      .whisper #header #notice p.notification {
+        width: 100%;
+        font-size: 16px;
+        color: #bebebe;
+        opacity: 0;
+        text-align: right; }
   .whisper #menu {
     width: 100%; }
     .whisper #menu ul {
@@ -56,7 +74,7 @@ body, html {
         height: 168px; }
       .whisper ul.boxlist li.box.schedule {
         height: 185.714px;
-        padding-bottom: 8px; }
+        padding-bottom: 16px; }
       .whisper ul.boxlist li.box .boxheader h1 {
         font-size: 21.667px;
         text-align: center;

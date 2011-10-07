@@ -14,6 +14,7 @@ $bordercolor: #46413c
 $contentbg: #ebebeb
 $deviceheader-color: #3f3f3f
 $switchcolor: #9f9f9f
+$notifycolor: #bebebe
 
 // Do not modify these unless you're sure about what you're doing
 $switchbase: $devicebase/2
@@ -32,13 +33,33 @@ body,html
     :clear both
 
   #header
+    :width $contentwidth
+    :margin auto
+    :display block
+    :height 80px
+    
     h1
-      :width 800px
-      :margin auto
+      :width 200px
+      :margin 0
       :padding $dm*3 $dm*2 $dm*2
+      :display inline
+      :float left
       :font-size 48px
       :font-weight 100
       :color $contentbg
+      
+    #notice
+      :width 400px
+      :padding 0 $dm*2 0
+      :margin-top 45px
+      :float right
+      
+      p.notification
+        :width 100%
+        :font-size $dm*2
+        :color $notifycolor
+        :opacity 0
+        :text-align right
   
   #menu
     :width 100%
@@ -85,7 +106,7 @@ body,html
         :height 168px
       &.schedule
         :height $devicebase/1.4
-        :padding-bottom $dm
+        :padding-bottom $dm*2
       .boxheader
 
         h1

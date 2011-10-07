@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   // On switching on or off, get paths for on or off
   $("a.on").click(function(event){  
     event.preventDefault();
@@ -53,4 +54,16 @@ $(document).ready(function(){
       // This really shouldn't be happening.
     }
   });
+  
+  $('.notification').animate({
+    opacity: '1',
+    textShadow: '#000 0 0 5px'
+  }, 700, function() {
+    $('.notification').animate({
+      opacity: '0',
+      textShadow: "#000 0 0 5px"
+    }, 700, function() {
+      // Animation complete.
+    });
+  }).delay(2000);
 });
