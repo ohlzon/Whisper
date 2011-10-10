@@ -42,17 +42,12 @@ $(document).ready(function(){
   
   // Device pane buttons
   $("a.button").click(function(event){
-    event.preventDefault();
     deviceid = $(this).parent().parent().parent().attr('id')
     if ( $(this).hasClass('learn') ) {
+      event.preventDefault();
       $.ajax({
         url: '/devices/' + deviceid + '/learn'
       });
-    } else if ( $(this).hasClass('edit') ) {  
-      $(this).load('http://localhost:3000/devices/' + deviceid + '/edit #form');
-      var title = $(this).parent().parent().parent().find('.boxslideout');
-      $(this).animate({height: '290px'});
-      $(this).parent().parent().parent().find('.boxslideout').animate({height: '480px'});
     } else if ( $(this).hasClass('delete') ) {
       // DELETE CODE
     } else {
@@ -64,12 +59,12 @@ $(document).ready(function(){
   $('.notification').animate({
     opacity: '1',
     textShadow: '#000 0 0 5px'
-  }, 700, function() {
+  }, 400, function() {
     $('.notification').animate({
       opacity: '0',
       textShadow: "#000 0 0 5px"
-    }, 700, function() {
+    }, 800, function() {
       // Animation complete.
     });
-  }).delay(2000);
+  }).delay(3000);
 });
