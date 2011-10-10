@@ -3,32 +3,34 @@
     <div class="boxheader">
       <h1>New Device</h1>
     </div>
-    <%= form_for([@device]) do |f| %>
-      <div class="field">
-        <%= f.label "Name" %><br />
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label "Location" %><br />
-        <%= f.text_field :location %>
-      </div>
-      <div class="field">
-        <%= f.label "Type" %><br />
-        <%= f.select("model", @devicetypes )%>
-      </div>
-      <div class="field">
-        <%= f.label "Protocol" %><br />
-        <%= f.select("protocol", @protocols ) %>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :house, :value => @housenumber %>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :unit, :value => @unitnumber %>
-      </div>
-      <div class="field">
-        <%= f.submit %>
-      </div>
-    <% end %>
+    <div id="form">
+      <%= form_for([@device]) do |f| %>
+        <div class="field">
+          <%= f.label "Name" %><br />
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label "Location" %><br />
+          <%= f.text_field :location %>
+        </div>
+        <div class="field">
+          <%= f.label "Type" %><br />
+          <%= f.select("model", @devicetypes )%>
+        </div>
+        <div class="field">
+          <%= f.label "Protocol" %><br />
+          <%= f.select("protocol", @protocols ) %>
+        </div>
+        <div class="field">
+          <%= f.hidden_field :house, :value => @housenumber %>
+        </div>
+        <div class="field">
+          <%= f.hidden_field :unit, :value => @unitnumber %>
+        </div>
+        <div class="field">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </<div>
   </li>  
 </ul>

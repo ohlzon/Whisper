@@ -33,7 +33,7 @@ $(document).ready(function(){
     } else {
       $(title).find('.boxheader').css("border-bottom","1px solid #9f9f9f");
       $(title).find('.boxslideout').animate({
-        height: '140'
+        height: '210'
       }, 200, function(){
         title.addClass( "expanded ");        
       });
@@ -48,13 +48,19 @@ $(document).ready(function(){
       $.ajax({
         url: '/devices/' + deviceid + '/learn'
       });
+    } else if ( $(this).hasClass('edit') ) {  
+      $(this).load('http://localhost:3000/devices/' + deviceid + '/edit #form');
+      var title = $(this).parent().parent().parent().find('.boxslideout');
+      $(this).animate({height: '290px'});
+      $(this).parent().parent().parent().find('.boxslideout').animate({height: '480px'});
     } else if ( $(this).hasClass('delete') ) {
-
+      // DELETE CODE
     } else {
       // This really shouldn't be happening.
     }
   });
   
+  // Notification animation
   $('.notification').animate({
     opacity: '1',
     textShadow: '#000 0 0 5px'

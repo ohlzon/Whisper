@@ -144,6 +144,7 @@ body,html
         :overflow hidden
 
         .deviceoptions
+          :height 1000px
           a
             :width 100%
             :font-size 26px
@@ -151,7 +152,7 @@ body,html
             :text-align center
             :font-weight 100
             :display block
-            &.learn
+            &.learn,&.edit
               :border-bottom 1px solid $switchcolor
             &:hover
               :background-color $contentbg - #1f1f1f
@@ -163,7 +164,6 @@ body,html
         :font-size $switchbase/2
         :font-weight 100
         :padding $switchbase/3 0
-        :position relative
         &.on
           :border-top 1px solid $switchcolor
           :border-right 1px solid $switchcolor

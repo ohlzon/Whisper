@@ -13,6 +13,12 @@ class DevicesController < ApplicationController
 
   def show    
   end
+  
+  def edit
+    @devicetypes = Devicetype::DEVICE_TYPES
+    @protocols = Protocol::PROTOCOLS
+    @device = Device.find(params[:id])
+  end
 
   def new
     @device = Device.new
@@ -27,7 +33,9 @@ class DevicesController < ApplicationController
   
   def update
     device = @device
-    @device.save
+    if @device.save
+      redirect_to(devices_path, :notice => 'Changes saved' )
+    end
   end
   
   def destroy
