@@ -32,8 +32,7 @@ class DevicesController < ApplicationController
   end
   
   def update
-    device = @device
-    if @device.save
+    if @device.update_attributes(params[:device])
       redirect_to(devices_path, :notice => 'Changes saved' )
     end
   end
