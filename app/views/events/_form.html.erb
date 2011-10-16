@@ -22,7 +22,7 @@
       </div>
       <div class="field time">
         <%= f.label "Time" %><br />
-        <%= f.select :hour, (0..23).map { |n| "%.2d" % n }, :selected => "12" %>
+        <%= f.select :hour, (0..23).map { |n| "%.2d" % n } %>
         <%= f.select :minute, ['00','05','10','15','20','25','30','35','40','45','50','55'] %>
       </div>
       <div class="field">

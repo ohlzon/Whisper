@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   belongs_to :device
   before_save { self.calc_next_run! }
+  validate :day_selected
+  
   
   def time
     "%.2d:%.2d" % [hour, minute]
@@ -26,7 +28,6 @@ class Event < ActiveRecord::Base
     where('next_run_at < ?', Time.zone.now) ## Production
   end
   
-  # TODO run! runs calc_next_run_at two times, one time for the callback and one time manually. Can we optimize that? (Gnäll på lowe)
   def run!
     puts "Switching " + device.id.to_s + " " + on?.to_s + " " + "at " + hour.to_s + ":" + minute.to_s + " on " + Time.zone.now.to_s
     if on?
@@ -49,6 +50,13 @@ class Event < ActiveRecord::Base
   end
 
   private
+  
+  def day_selected
+    if (mon.blank? && tue.blank? && wed.blank? && thu.blank? && fri.blank? && sat.blank? && sun.blank?)
+      errors.add(:base, "At least one day must be selected")
+    end
+  end
+  
   def is_run_time?(time)
     unless time.past?
       return true  if time.monday? && self.mon?

@@ -101,25 +101,26 @@ body, html {
       .whisper ul.boxlist li.box .boxslideout {
         height: 0;
         overflow: hidden; }
-        .whisper ul.boxlist li.box .boxslideout .deviceoptions a {
-          width: 100%;
-          font-size: 26px;
-          padding: 26px 0;
-          text-align: center;
-          font-weight: 100;
-          display: block; }
-          .whisper ul.boxlist li.box .boxslideout .deviceoptions a.learn {
-            border-bottom: 1px solid #9f9f9f; }
-          .whisper ul.boxlist li.box .boxslideout .deviceoptions a:hover {
-            background-color: #cccccc; }
+        .whisper ul.boxlist li.box .boxslideout .deviceoptions {
+          height: 1000px; }
+          .whisper ul.boxlist li.box .boxslideout .deviceoptions a {
+            width: 100%;
+            font-size: 26px;
+            padding: 26px 0;
+            text-align: center;
+            font-weight: 100;
+            display: block; }
+            .whisper ul.boxlist li.box .boxslideout .deviceoptions a.learn, .whisper ul.boxlist li.box .boxslideout .deviceoptions a.edit {
+              border-bottom: 1px solid #9f9f9f; }
+            .whisper ul.boxlist li.box .boxslideout .deviceoptions a:hover {
+              background-color: #cccccc; }
       .whisper ul.boxlist li.box .switch {
         display: inline;
         float: left;
         text-align: center;
         font-size: 65px;
         font-weight: 100;
-        padding: 43.333px 0;
-        position: relative; }
+        padding: 43.333px 0; }
         .whisper ul.boxlist li.box .switch.on {
           border-top: 1px solid #9f9f9f;
           border-right: 1px solid #9f9f9f;
@@ -168,3 +169,6 @@ body, html {
         .whisper ul.boxlist li.box a:hover {
           text-decoration: none;
           background-color: #cccccc; }
+  .whisper #footer {
+    width: 100%;
+    height: 160px; }
