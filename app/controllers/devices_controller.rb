@@ -9,6 +9,12 @@ class DevicesController < ApplicationController
   
   def index
     @devices = Device.all
+    @days = ""
+    @devices.each do |device|
+      device.events.any? do |event|
+        @days = @days + event.device.name + "Yaa"
+      end
+    end
   end
 
   def show    
@@ -38,8 +44,13 @@ class DevicesController < ApplicationController
   end
   
   def destroy
-    @device = Device.destroy(params[:id])
-    redirect_to :action => 'index'
+    @device = Device.find(params[:id])
+    if @device.events.any?
+      redirect_to(devices_path, :notice => 'There are schedules assigned to the device youre trying to delete.' )
+    else
+      @device = Device.destroy(params[:id])
+      redirect_to :action => 'index', :notice => 'Done!'
+    end
   end
 
   def create

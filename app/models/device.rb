@@ -1,4 +1,5 @@
 class Device < ActiveRecord::Base
+  has_many :events
   def self.writeconfig
     # configfile = File.open( "doc/tellstick.conf","w") # Use this row for development purposes
     configfile = File.open( "/etc/tellstick.conf","w") # Use this row for production (remember to chown webuser/tellstick.conf)
