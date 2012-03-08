@@ -18,3 +18,7 @@ Models
     
 bundle exec rake run_cron_entries should be executed by cron 16 minutes past the hour
 
+
+
+
+There is a bug where creating a Proove device may end up creating a duplicate. This only happens on rare occations - Deleting and re-creating the device will usually solve the problem.
