@@ -51,34 +51,19 @@ class DevicesController < ApplicationController
 
   def create    
     @device = Device.new(params[:device])
-
-    takenhousenumbers = Device.all.map(&:house)
-    takenunitnumbers = Device.all.map(&:unit)
-
-    if @device.manufacturer == "proove"
-      supported_housenumbers = ["266","258","426","430","434","438","442","446","450","454","458"]
-      @housenumber = supported_housenumbers[rand(10)]
-      until @unitnumber and not takenunitnumbers.include?(@unitnumber)
-          @unitnumber = 1+rand(16)
-      end
-      Device.all.each do |existing_device|
-        if @housenumber == existing_device.house and @unitnumber == existing_device.unit
-          @housenumber = supported_housenumbers[rand(10)]
-          until @unitnumber and not takenunitnumbers.include?(@unitnumber)
-              @unitnumber = 1+rand(16)
-          end
+    existingdevices = Device.all
+    supported_housenumbers = ["266","258","426","430","434","438","442","446","450","454","458"]
+    
+    until @housenumber and @unitnumber
+      @housenumber = supported_housenumbers[rand(11)]
+      @unitnumber = 1+rand(15)
+      existingdevices.each do |exdev|
+        puts "Checking #{@housenumber} and #{@unitnumber} against #{exdev.house} and #{exdev.unit}"
+        if exdev.house == @housenumber.to_i and exdev.unit == @unitnumber.to_i
+          puts "Combination found, reseting to nil"
+          @housenumber = nil
+          @unitnumber = nil
         end
-        ### Detta skapar bara ett nytt nummer utan att kolla om det redan existerar en kombination. Den borde börja om utvärderingen när den skapar nya nummer.
-      end
-    else
-      #until @housenumber and not takenhousenumbers.include?(@housenumber) and @unitnumber and not takenunitnumbers.include?(@unitnumber)
-      until @housenumber and @unitnumber and not takenhousenumbers.include?(@housenumber) and not takenunitnumbers.include?(@unitnumber)
-          @housenumber = rand(67000000)
-          @unitnumber = 1+rand(151)
-          Array(1..16).all? { |n| takenunitnumbers.include?(n) }
-          #### Fixa så den skapar ett nytt husnummer om alla 16 enheter är upptagna på nuvarande hus
-          ### Kanske bygga så den fyller hus för hus istället?
-          ### Börjar på ett visst hus, fyller det, sedan går den över på nästa hus
       end
     end
     
