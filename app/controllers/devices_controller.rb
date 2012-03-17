@@ -23,6 +23,7 @@ class DevicesController < ApplicationController
   def edit
     @devicetypes = Devicetype::DEVICE_TYPES
     @protocols = Protocol::PROTOCOLS
+    @manufacturers = Manufacturer::MANUFACTURERS
     @device = Device.find(params[:id])
   end
 
