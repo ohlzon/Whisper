@@ -32,6 +32,14 @@
           <%= f.hidden_field :unit, :value => @unitnumber %>
         </div>
         <div class="field">
+          <%= f.label "House number" %><br />
+          <%= f.text_field :house, :disabled => true %>
+        </div>  
+        <div class="field">
+          <%= f.label "Unit number" %><br />
+          <%= f.text_field :unit, :disabled => true %>
+        </div>
+        <div class="field">
           <%= f.submit %>
         </div>
       <% end %>
